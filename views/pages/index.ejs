@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vulnerability testing</title>
+  </head>
+  <body>
+    <h3>Cross-site scripting Vulnerability</h3>
+    <p>To test XSS you have two button bellow, Vulnerable and Safe. Vulnerable creates a vulnerable cookie, while safe creates a safe cookie.</p>
+    <hr />
+    <button id="vulnerableXSS">Vulnerable</button>
+    <button id="safeXSS">Safe</button>
+    <br />
+    <form action="/">
+      <p>
+        Testing XSS, try entering 'javascript:alert(document.cookie)' : if you have a safe cookie it will create an alert with no information, if you have a vulnerable cookie it will create an alert with cookie information.
+      </p>
+      <input type="text" name="formres" />
+      <input type="submit" value="Submit" />
+    </form>
+    <br>
+    <img src=<%= testtext %> onerror=eval(src) alt="This text will appear always because there is no img, the tag is just used for XSS through img src attribue, check the src attribute with inspect if you put in anything other than malicious code in the form field.">
+    <br>
+    <h3>SQL injection vulnerability</h3>
+
+    <script>
+      document.getElementById("vulnerableXSS").onclick = function () {
+        location.href = "http://localhost:5000/vulnerableXSS";
+      };
+      document.getElementById("safeXSS").onclick = function () {
+        location.href = "http://localhost:5000/safeXSS";
+      };
+    </script>
+  </body>
+</html>
+
