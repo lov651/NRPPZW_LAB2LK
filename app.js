@@ -11,7 +11,7 @@ app.use(
     secret: "keyboard cat",
     resave: true,
     saveUninitialized: true,
-    cookie: { httpOnly: true },
+    cookie: { httpOnly: false },
   })
 );
 
