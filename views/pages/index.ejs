@@ -24,7 +24,7 @@
     <img src=<%= testtext %> onerror=eval(src) alt="This text will appear always because there is no img, the tag is just used for XSS through img src attribue, check the src attribute with inspect if you put in anything other than malicious code in the form field.">
     <br>
     <h3>Cross-site request forgery Vulnerability</h3>
-    <p>This vulnerability can be tested by creating a backend session which has httponly flage set to false. The host site provides a session of it's own with httponly set as true, so if a user tries to get the session id through the upper form, it will fail.</p>
+    <p>This vulnerability can be tested by creating a backend session which has httponly flag set to false. The host site provides a session of it's own with httponly set as true, so if a user tries to get the session id through the upper form, it will fail.</p>
 
     <script>
       document.getElementById("vulnerableXSS").onclick = function () {
