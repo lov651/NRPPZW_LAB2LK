@@ -23,7 +23,6 @@
     <br>
     <img src=<%= testtext %> onerror=eval(src) alt="This text will appear always because there is no img, the tag is just used for XSS through img src attribue, check the src attribute with inspect if you put in anything other than malicious code in the form field.">
     <br>
-    <h3>SQL injection vulnerability</h3>
 
     <script>
       document.getElementById("vulnerableXSS").onclick = function () {
